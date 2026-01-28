@@ -1,12 +1,13 @@
 name: NexoJobs-optimized
-version: 1.5.3
+version: ${project.version}
 main: com.nexojobs.NexoJobs
 api-version: '1.19'
-author: Grehista
-description: Jobs system By Grehista
+authors: [Grehista, vanes430]
+description: ${project.description}
 website: www.sangku.com
-softdepend:
+depend:
   - Vault
+softdepend:
   - PlaceholderAPI
 
 commands:

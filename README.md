@@ -40,6 +40,20 @@ Replace `<jobid>` with: `miner`, `farmer`, `hunter`, `lumberjack`, `enchanter`, 
 | `%nexojobs_<jobid>_is_active%` | Is active | `%nexojobs_miner_is_active%` → `true` |
 | `%nexojobs_<jobid>_has_started%` | Has progress | `%nexojobs_farmer_has_started%` → `true` |
 
+## Permissions
+
+| Permission | Description | Default |
+|------------|-------------|---------|
+| `nexojobs.admin` | Full admin access (reload, manage jobs) | `op` |
+| `nexojobs.use` | Basic access to the jobs system | `true` |
+| `nexojobs.usejobs.limit.unlimited` | No limit on active jobs | `op` |
+| `nexojobs.usejobs.limit.<number>` | Limit active jobs to `<number>` (1-10) | `1` is default |
+
+**Note on Job Limits:**
+- By default, all players have a limit of **1** active job (`nexojobs.usejobs.limit.1`).
+- You can grant higher limits by giving permissions from `nexojobs.usejobs.limit.2` up to `nexojobs.usejobs.limit.10`.
+- OPs have unlimited jobs by default.
+
 ## Common Use Cases
 
 ### 1. Level Requirement Check

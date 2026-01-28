@@ -1,7 +1,6 @@
 package com.nexojobs;
 
 import org.bukkit.plugin.java.JavaPlugin;
-import org.bukkit.plugin.RegisteredServiceProvider;
 import net.milkbowl.vault.economy.Economy;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -18,12 +17,6 @@ public class NexoJobs extends JavaPlugin {
     @Override
     public void onEnable() {
         instance = this;
-
-        if (!setupEconomy()) {
-            getLogger().severe("Vault/Economy plugin not found! Plugin will be disabled.");
-            Bukkit.getPluginManager().disablePlugin(this);
-            return;
-        }
         
         saveDefaultConfig();
         configManager = new ConfigManager(this);
@@ -83,18 +76,6 @@ public class NexoJobs extends JavaPlugin {
         }
         
         getLogger().info("NexoJobs disabled!");
-    }
-    
-    private boolean setupEconomy() {
-        if (getServer().getPluginManager().getPlugin("Vault") == null) {
-            return false;
-        }
-        RegisteredServiceProvider<Economy> rsp = getServer().getServicesManager().getRegistration(Economy.class);
-        if (rsp == null) {
-            return false;
-        }
-        economy = rsp.getProvider();
-        return economy != null;
     }
     
     public Economy getEconomy() {

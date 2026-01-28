@@ -4,6 +4,7 @@ import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 import org.bukkit.configuration.file.FileConfiguration;
 
+import java.io.File;
 import java.sql.*;
 import java.util.*;
 
@@ -13,11 +14,13 @@ public class DatabaseManager {
     private HikariDataSource dataSource;
     private final String tablePrefix;
     private boolean connected = false;
+    private String dbType;
     
     public DatabaseManager(NexoJobs plugin) {
         this.plugin = plugin;
         FileConfiguration config = plugin.getConfig();
         this.tablePrefix = config.getString("database.table-prefix", "nexojobs_");
+        this.dbType = config.getString("database.type", "sqlite").toLowerCase();
         
         setupDatabase();
         if (connected) {
@@ -28,25 +31,44 @@ public class DatabaseManager {
     private void setupDatabase() {
         FileConfiguration config = plugin.getConfig();
         
-        String host = config.getString("database.host", "localhost");
-        int port = config.getInt("database.port", 3306);
-        String database = config.getString("database.database", "minecraft");
-        String username = config.getString("database.username", "root");
-        String password = config.getString("database.password", "");
-        boolean useSSL = config.getBoolean("database.use-ssl", false);
-        
         try {
             HikariConfig hikariConfig = new HikariConfig();
             
-            String jdbcUrl = String.format(
-                "jdbc:mysql://%s:%d/%s?useSSL=%s&allowPublicKeyRetrieval=true&serverTimezone=UTC&characterEncoding=utf8&useUnicode=true",
-                host, port, database, useSSL
-            );
-            
-            hikariConfig.setJdbcUrl(jdbcUrl);
-            hikariConfig.setUsername(username);
-            hikariConfig.setPassword(password);
-            hikariConfig.setDriverClassName("com.mysql.cj.jdbc.Driver");
+            if (dbType.equals("sqlite")) {
+                File dbFile = new File(plugin.getDataFolder(), "database.db");
+                hikariConfig.setJdbcUrl("jdbc:sqlite:" + dbFile.getAbsolutePath());
+                hikariConfig.setDriverClassName("org.sqlite.JDBC");
+                hikariConfig.setPoolName("NexoJobsSQLitePool");
+            } else {
+                String host = config.getString("database.host", "localhost");
+                int port = config.getInt("database.port", 3306);
+                String database = config.getString("database.database", "minecraft");
+                String username = config.getString("database.username", "root");
+                String password = config.getString("database.password", "");
+                boolean useSSL = config.getBoolean("database.use-ssl", false);
+
+                String jdbcUrl = String.format(
+                    "jdbc:mysql://%s:%d/%s?useSSL=%s&allowPublicKeyRetrieval=true&serverTimezone=UTC&characterEncoding=utf8&useUnicode=true",
+                    host, port, database, useSSL
+                );
+                
+                hikariConfig.setJdbcUrl(jdbcUrl);
+                hikariConfig.setUsername(username);
+                hikariConfig.setPassword(password);
+                hikariConfig.setDriverClassName("com.mysql.cj.jdbc.Driver");
+                
+                // MySQL specific optimizations
+                hikariConfig.addDataSourceProperty("cachePrepStmts", "true");
+                hikariConfig.addDataSourceProperty("prepStmtCacheSize", "250");
+                hikariConfig.addDataSourceProperty("prepStmtCacheSqlLimit", "2048");
+                hikariConfig.addDataSourceProperty("useServerPrepStmts", "true");
+                hikariConfig.addDataSourceProperty("useLocalSessionState", "true");
+                hikariConfig.addDataSourceProperty("rewriteBatchedStatements", "true");
+                hikariConfig.addDataSourceProperty("cacheResultSetMetadata", "true");
+                hikariConfig.addDataSourceProperty("cacheServerConfiguration", "true");
+                hikariConfig.addDataSourceProperty("elideSetAutoCommits", "true");
+                hikariConfig.addDataSourceProperty("maintainTimeStats", "false");
+            }
 
             hikariConfig.setMaximumPoolSize(config.getInt("database.pool.maximum-pool-size", 10));
             hikariConfig.setMinimumIdle(config.getInt("database.pool.minimum-idle", 2));
@@ -54,27 +76,18 @@ public class DatabaseManager {
             hikariConfig.setConnectionTimeout(config.getLong("database.pool.connection-timeout", 30000));
             hikariConfig.setIdleTimeout(config.getLong("database.pool.idle-timeout", 600000));
             
-            hikariConfig.setConnectionTestQuery("SELECT 1");
+            if (!dbType.equals("sqlite")) {
+                hikariConfig.setConnectionTestQuery("SELECT 1");
+            }
             hikariConfig.setValidationTimeout(5000);
-
-            hikariConfig.addDataSourceProperty("cachePrepStmts", "true");
-            hikariConfig.addDataSourceProperty("prepStmtCacheSize", "250");
-            hikariConfig.addDataSourceProperty("prepStmtCacheSqlLimit", "2048");
-            hikariConfig.addDataSourceProperty("useServerPrepStmts", "true");
-            hikariConfig.addDataSourceProperty("useLocalSessionState", "true");
-            hikariConfig.addDataSourceProperty("rewriteBatchedStatements", "true");
-            hikariConfig.addDataSourceProperty("cacheResultSetMetadata", "true");
-            hikariConfig.addDataSourceProperty("cacheServerConfiguration", "true");
-            hikariConfig.addDataSourceProperty("elideSetAutoCommits", "true");
-            hikariConfig.addDataSourceProperty("maintainTimeStats", "false");
             
             dataSource = new HikariDataSource(hikariConfig);
             
             try (Connection conn = dataSource.getConnection()) {
                 if (conn != null && !conn.isClosed()) {
                     connected = true;
-                    plugin.getLogger().info("Successfully connected to MySQL database!");
-                    plugin.getLogger().info("Database: " + database + " | Host: " + host + ":" + port);
+                    String dbName = dbType.equals("sqlite") ? "SQLite" : "MySQL/MariaDB";
+                    plugin.getLogger().info("Successfully connected to " + dbName + " database!");
                 }
             }
             
@@ -82,45 +95,69 @@ public class DatabaseManager {
             connected = false;
             plugin.getLogger().severe("═══════════════════════════════════════════");
             plugin.getLogger().severe("FAILED TO CONNECT TO DATABASE!");
+            plugin.getLogger().severe("Type: " + dbType);
             plugin.getLogger().severe("Error: " + e.getMessage());
-            plugin.getLogger().severe("═══════════════════════════════════════════");
-            plugin.getLogger().severe("Please check your database configuration:");
-            plugin.getLogger().severe("  - Host: " + host);
-            plugin.getLogger().severe("  - Port: " + port);
-            plugin.getLogger().severe("  - Database: " + database);
-            plugin.getLogger().severe("  - Username: " + username);
             plugin.getLogger().severe("═══════════════════════════════════════════");
             e.printStackTrace();
         }
     }
     
     private void createTables() {
-        String playerDataTable = "CREATE TABLE IF NOT EXISTS " + tablePrefix + "player_data (" +
-                "uuid VARCHAR(36) PRIMARY KEY," +
-                "player_name VARCHAR(16) NOT NULL," +
-                "last_updated TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP," +
-                "INDEX idx_player_name (player_name)" +
-                ") ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;";
-        
-        String jobProgressTable = "CREATE TABLE IF NOT EXISTS " + tablePrefix + "job_progress (" +
-                "id INT AUTO_INCREMENT PRIMARY KEY," +
-                "uuid VARCHAR(36) NOT NULL," +
-                "job_id VARCHAR(50) NOT NULL," +
-                "level INT NOT NULL DEFAULT 1," +
-                "exp INT NOT NULL DEFAULT 0," +
-                "is_active BOOLEAN NOT NULL DEFAULT FALSE," +
-                "last_updated TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP," +
-                "UNIQUE KEY unique_player_job (uuid, job_id)," +
-                "INDEX idx_uuid (uuid)," +
-                "INDEX idx_active (uuid, is_active)," +
-                "FOREIGN KEY (uuid) REFERENCES " + tablePrefix + "player_data(uuid) ON DELETE CASCADE" +
-                ") ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;";
+        String playerDataTable;
+        String jobProgressTable;
+
+        if (dbType.equals("sqlite")) {
+            playerDataTable = "CREATE TABLE IF NOT EXISTS " + tablePrefix + "player_data (" +
+                    "uuid VARCHAR(36) PRIMARY KEY," +
+                    "player_name VARCHAR(16) NOT NULL," +
+                    "last_updated TIMESTAMP DEFAULT CURRENT_TIMESTAMP" +
+                    ");";
+            
+            jobProgressTable = "CREATE TABLE IF NOT EXISTS " + tablePrefix + "job_progress (" +
+                    "id INTEGER PRIMARY KEY AUTOINCREMENT," +
+                    "uuid VARCHAR(36) NOT NULL," +
+                    "job_id VARCHAR(50) NOT NULL," +
+                    "level INTEGER NOT NULL DEFAULT 1," +
+                    "exp INTEGER NOT NULL DEFAULT 0," +
+                    "is_active BOOLEAN NOT NULL DEFAULT 0," +
+                    "last_updated TIMESTAMP DEFAULT CURRENT_TIMESTAMP," +
+                    "UNIQUE(uuid, job_id)," +
+                    "FOREIGN KEY (uuid) REFERENCES " + tablePrefix + "player_data(uuid) ON DELETE CASCADE" +
+                    ");";
+        } else {
+            playerDataTable = "CREATE TABLE IF NOT EXISTS " + tablePrefix + "player_data (" +
+                    "uuid VARCHAR(36) PRIMARY KEY," +
+                    "player_name VARCHAR(16) NOT NULL," +
+                    "last_updated TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP," +
+                    "INDEX idx_player_name (player_name)" +
+                    ") ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;";
+            
+            jobProgressTable = "CREATE TABLE IF NOT EXISTS " + tablePrefix + "job_progress (" +
+                    "id INT AUTO_INCREMENT PRIMARY KEY," +
+                    "uuid VARCHAR(36) NOT NULL," +
+                    "job_id VARCHAR(50) NOT NULL," +
+                    "level INT NOT NULL DEFAULT 1," +
+                    "exp INT NOT NULL DEFAULT 0," +
+                    "is_active BOOLEAN NOT NULL DEFAULT FALSE," +
+                    "last_updated TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP," +
+                    "UNIQUE KEY unique_player_job (uuid, job_id)," +
+                    "INDEX idx_uuid (uuid)," +
+                    "INDEX idx_active (uuid, is_active)," +
+                    "FOREIGN KEY (uuid) REFERENCES " + tablePrefix + "player_data(uuid) ON DELETE CASCADE" +
+                    ") ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;";
+        }
         
         try (Connection conn = getConnection();
              Statement stmt = conn.createStatement()) {
             
             stmt.executeUpdate(playerDataTable);
             stmt.executeUpdate(jobProgressTable);
+            
+            if (dbType.equals("sqlite")) {
+                stmt.executeUpdate("CREATE INDEX IF NOT EXISTS idx_player_name ON " + tablePrefix + "player_data (player_name);");
+                stmt.executeUpdate("CREATE INDEX IF NOT EXISTS idx_uuid ON " + tablePrefix + "job_progress (uuid);");
+                stmt.executeUpdate("CREATE INDEX IF NOT EXISTS idx_active ON " + tablePrefix + "job_progress (uuid, is_active);");
+            }
             
             plugin.getLogger().info("Database tables created/verified successfully!");
             
@@ -140,15 +177,24 @@ public class DatabaseManager {
     public void savePlayerData(UUID uuid, String playerName) {
         if (!connected) return;
         
-        String sql = "INSERT INTO " + tablePrefix + "player_data (uuid, player_name) " +
-                "VALUES (?, ?) ON DUPLICATE KEY UPDATE player_name = ?, last_updated = CURRENT_TIMESTAMP";
+        String sql;
+        if (dbType.equals("sqlite")) {
+            sql = "INSERT INTO " + tablePrefix + "player_data (uuid, player_name, last_updated) " +
+                    "VALUES (?, ?, CURRENT_TIMESTAMP) ON CONFLICT(uuid) DO UPDATE SET " +
+                    "player_name = EXCLUDED.player_name, last_updated = CURRENT_TIMESTAMP";
+        } else {
+            sql = "INSERT INTO " + tablePrefix + "player_data (uuid, player_name) " +
+                    "VALUES (?, ?) ON DUPLICATE KEY UPDATE player_name = ?, last_updated = CURRENT_TIMESTAMP";
+        }
         
         try (Connection conn = getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
             
             stmt.setString(1, uuid.toString());
             stmt.setString(2, playerName);
-            stmt.setString(3, playerName);
+            if (!dbType.equals("sqlite")) {
+                stmt.setString(3, playerName);
+            }
             stmt.executeUpdate();
             
             if (plugin.getConfig().getBoolean("logging.log-player-saves", true)) {
@@ -163,8 +209,15 @@ public class DatabaseManager {
     public void saveJobProgress(UUID uuid, String jobId, int level, int exp, boolean isActive) {
         if (!connected) return;
         
-        String sql = "INSERT INTO " + tablePrefix + "job_progress (uuid, job_id, level, exp, is_active) " +
-                "VALUES (?, ?, ?, ?, ?) ON DUPLICATE KEY UPDATE level = ?, exp = ?, is_active = ?, last_updated = CURRENT_TIMESTAMP";
+        String sql;
+        if (dbType.equals("sqlite")) {
+            sql = "INSERT INTO " + tablePrefix + "job_progress (uuid, job_id, level, exp, is_active, last_updated) " +
+                    "VALUES (?, ?, ?, ?, ?, CURRENT_TIMESTAMP) ON CONFLICT(uuid, job_id) DO UPDATE SET " +
+                    "level = EXCLUDED.level, exp = EXCLUDED.exp, is_active = EXCLUDED.is_active, last_updated = CURRENT_TIMESTAMP";
+        } else {
+            sql = "INSERT INTO " + tablePrefix + "job_progress (uuid, job_id, level, exp, is_active) " +
+                    "VALUES (?, ?, ?, ?, ?) ON DUPLICATE KEY UPDATE level = ?, exp = ?, is_active = ?, last_updated = CURRENT_TIMESTAMP";
+        }
         
         try (Connection conn = getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
@@ -174,9 +227,13 @@ public class DatabaseManager {
             stmt.setInt(3, level);
             stmt.setInt(4, exp);
             stmt.setBoolean(5, isActive);
-            stmt.setInt(6, level);
-            stmt.setInt(7, exp);
-            stmt.setBoolean(8, isActive);
+            
+            if (!dbType.equals("sqlite")) {
+                stmt.setInt(6, level);
+                stmt.setInt(7, exp);
+                stmt.setBoolean(8, isActive);
+            }
+            
             stmt.executeUpdate();
             
             if (plugin.getConfig().getBoolean("logging.log-database-updates", true)) {
@@ -346,8 +403,15 @@ public class DatabaseManager {
                                      Map<UUID, Set<String>> activeJobs) {
         if (!connected) return;
         
-        String sql = "INSERT INTO " + tablePrefix + "job_progress (uuid, job_id, level, exp, is_active) " +
-                "VALUES (?, ?, ?, ?, ?) ON DUPLICATE KEY UPDATE level = ?, exp = ?, is_active = ?";
+        String sql;
+        if (dbType.equals("sqlite")) {
+            sql = "INSERT INTO " + tablePrefix + "job_progress (uuid, job_id, level, exp, is_active, last_updated) " +
+                    "VALUES (?, ?, ?, ?, ?, CURRENT_TIMESTAMP) ON CONFLICT(uuid, job_id) DO UPDATE SET " +
+                    "level = EXCLUDED.level, exp = EXCLUDED.exp, is_active = EXCLUDED.is_active, last_updated = CURRENT_TIMESTAMP";
+        } else {
+            sql = "INSERT INTO " + tablePrefix + "job_progress (uuid, job_id, level, exp, is_active) " +
+                    "VALUES (?, ?, ?, ?, ?) ON DUPLICATE KEY UPDATE level = ?, exp = ?, is_active = ?, last_updated = CURRENT_TIMESTAMP";
+        }
         
         try (Connection conn = getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
@@ -369,9 +433,13 @@ public class DatabaseManager {
                     stmt.setInt(3, data.getLevel());
                     stmt.setInt(4, data.getExp());
                     stmt.setBoolean(5, isActive);
-                    stmt.setInt(6, data.getLevel());
-                    stmt.setInt(7, data.getExp());
-                    stmt.setBoolean(8, isActive);
+                    
+                    if (!dbType.equals("sqlite")) {
+                        stmt.setInt(6, data.getLevel());
+                        stmt.setInt(7, data.getExp());
+                        stmt.setBoolean(8, isActive);
+                    }
+                    
                     stmt.addBatch();
                     
                     batchCount++;
@@ -408,7 +476,7 @@ public class DatabaseManager {
         if (!connected || dataSource == null) return false;
         
         try (Connection conn = getConnection()) {
-            return conn != null && !conn.isClosed() && conn.isValid(5);
+            return conn != null && !conn.isClosed();
         } catch (SQLException e) {
             return false;
         }

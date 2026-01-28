@@ -12,8 +12,8 @@ prefix: '&b&lNEXOJOBS &9/ &7'
 
 
 database:
-  # Database type: mysql, mariadb
-  type: ''
+  # Database type: mysql, mariadb, sqlite
+  type: 'sqlite'
   
   # Database connection details
   host: ''
