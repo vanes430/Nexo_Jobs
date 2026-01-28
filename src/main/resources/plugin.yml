@@ -1,0 +1,71 @@
+name: NexoJobs-optimized
+version: 1.5.3
+main: com.nexojobs.NexoJobs
+api-version: '1.19'
+author: Grehista
+description: Jobs system By Grehista
+website: www.sangku.com
+softdepend:
+  - Vault
+  - PlaceholderAPI
+
+commands:
+  jobs:
+    description: Open the jobs menu or reload the plugin
+    usage: /<command> [reload|join|leave|progress|info|stats|list|help]
+    aliases:
+      - job
+      - nexojobs
+
+permissions:
+  nexojobs.admin:
+    description: Admin access to reload the plugin and manage jobs
+    default: op
+  
+  nexojobs.use:
+    description: Allows players to use the jobs system
+    default: true
+  
+  nexojobs.usejobs.limit.1:
+    description: Allows player to have 1 active job
+    default: true
+  
+  nexojobs.usejobs.limit.2:
+    description: Allows player to have 2 active jobs
+    default: false
+  
+  nexojobs.usejobs.limit.3:
+    description: Allows player to have 3 active jobs
+    default: false
+  
+  nexojobs.usejobs.limit.4:
+    description: Allows player to have 4 active jobs
+    default: false
+  
+  nexojobs.usejobs.limit.5:
+    description: Allows player to have 5 active jobs
+    default: false
+  
+  nexojobs.usejobs.limit.6:
+    description: Allows player to have 6 active jobs
+    default: false
+  
+  nexojobs.usejobs.limit.7:
+    description: Allows player to have 7 active jobs
+    default: false
+  
+  nexojobs.usejobs.limit.8:
+    description: Allows player to have 8 active jobs
+    default: false
+  
+  nexojobs.usejobs.limit.9:
+    description: Allows player to have 9 active jobs
+    default: false
+  
+  nexojobs.usejobs.limit.10:
+    description: Allows player to have 10 active jobs
+    default: false
+  
+  nexojobs.usejobs.limit.unlimited:
+    description: Allows player to have unlimited active jobs
+    default: op

@@ -1,0 +1,487 @@
+# ==========================================
+# NexoJobs Configuration File
+# ==========================================
+
+prefix: '&b&lNEXOJOBS &9/ &7'
+
+# ==========================================
+# GUI Configuration
+# Fully customizable GUI system
+# ofkros bai grehistaganteng and chat gpt ;v
+# ==========================================
+
+
+database:
+  # Database type: mysql, mariadb
+  type: ''
+  
+  # Database connection details
+  host: ''
+  port: 6969
+  database: ''
+  username: ''
+  password: ''
+  
+  # Table prefix (if sharing database with other plugins)
+  table-prefix: 'nexojobs_'
+  
+  # Use SSL connection
+  use-ssl: false
+  
+  # Connection pool settings
+  pool:
+    # Maximum number of connections in the pool
+    maximum-pool-size: 10
+    
+    # Minimum number of idle connections
+    minimum-idle: 2
+    
+    # Maximum lifetime of a connection (in milliseconds)
+    max-lifetime: 1800000
+    
+    # Connection timeout (in milliseconds)
+    connection-timeout: 30000
+    
+    # Idle timeout (in milliseconds)
+    idle-timeout: 600000
+
+
+# Database Logging Settings
+logging:
+
+  # Set to false to reduce console spam
+  log-database-updates: true
+  
+  # Log player data saves
+  log-player-saves: true
+  
+  # Log auto-save operations
+  log-auto-saves: false
+
+
+# GUI Configuration
+# ofkros bai grehistaganteng and chat gpt ;v
+
+gui:
+  main-menu:
+    title: '           Job Selection'
+    page-1:
+      size: 54
+      fillers:
+        enabled: true
+        material: BLACK_STAINED_GLASS_PANE
+        name: ' '
+        lore: []
+      
+      jobs:
+        miner:
+          enabled: true
+          slot: 10
+          material: IRON_PICKAXE
+          sound: ENTITY_EXPERIENCE_ORB_PICKUP
+          name: '&7⛏ &b&lMINER'
+          lore:
+            - ''
+            - '&7{description}'
+            - ''
+            - '&8▸ &7Status: {status}'
+            - '&8▸ &7Level: &e{level}&7/&e{max_level}'
+            - '&8▸ &7Progress: &e{exp}&7/&e{required}'
+            - ''
+            - '&e&l▶ CLICK TO SELECT'
+        
+        builder:
+          enabled: true
+          slot: 12
+          material: BRICKS
+          sound: ENTITY_EXPERIENCE_ORB_PICKUP
+          name: '&7🏗 &6&lBUILDER'
+          lore:
+            - ''
+            - '&7{description}'
+            - ''
+            - '&8▸ &7Status: {status}'
+            - '&8▸ &7Level: &e{level}&7/&e{max_level}'
+            - '&8▸ &7Progress: &e{exp}&7/&e{required}'
+            - ''
+            - '&e&l▶ CLICK TO SELECT'
+        
+        farmer:
+          enabled: true
+          slot: 14
+          material: GOLDEN_HOE
+          sound: ENTITY_EXPERIENCE_ORB_PICKUP
+          name: '&7🌾 &a&lFARMER'
+          lore:
+            - ''
+            - '&7{description}'
+            - ''
+            - '&8▸ &7Status: {status}'
+            - '&8▸ &7Level: &e{level}&7/&e{max_level}'
+            - '&8▸ &7Progress: &e{exp}&7/&e{required}'
+            - ''
+            - '&e&l▶ CLICK TO SELECT'
+        
+        hunter:
+          enabled: true
+          slot: 16
+          material: BOW
+          sound: ENTITY_EXPERIENCE_ORB_PICKUP
+          name: '&7🏹 &c&lHUNTER'
+          lore:
+            - ''
+            - '&7{description}'
+            - ''
+            - '&8▸ &7Status: {status}'
+            - '&8▸ &7Level: &e{level}&7/&e{max_level}'
+            - '&8▸ &7Progress: &e{exp}&7/&e{required}'
+            - ''
+            - '&e&l▶ CLICK TO SELECT'
+        
+        fishing:
+          enabled: true
+          slot: 34
+          material: FISHING_ROD
+          sound: ENTITY_EXPERIENCE_ORB_PICKUP
+          name: '&7🎣 &9&lFISHING'
+          lore:
+            - ''
+            - '&c⚠ This feature is currently under maintenance.'
+            - '&7The Fishing system is experiencing errors'
+            - '&7and is temporarily disabled for fixes.'
+            - ''
+            - '&8▸ &7Status: &cMaintenance'
+            - '&8▸ &7Availability: &eComing Soon'
+            - ''
+            - '&c&l▶ CURRENTLY UNAVAILABLE'
+        
+        lumberjack:
+          enabled: true
+          slot: 28
+          material: IRON_AXE
+          sound: ENTITY_EXPERIENCE_ORB_PICKUP
+          name: '&7🪓 &2&lLUMBERJACK'
+          lore:
+            - ''
+            - '&7{description}'
+            - ''
+            - '&8▸ &7Status: {status}'
+            - '&8▸ &7Level: &e{level}&7/&e{max_level}'
+            - '&8▸ &7Progress: &e{exp}&7/&e{required}'
+            - ''
+            - '&e&l▶ CLICK TO SELECT'
+        
+        enchanter:
+          enabled: true
+          slot: 30
+          material: ENCHANTING_TABLE
+          sound: ENTITY_EXPERIENCE_ORB_PICKUP
+          name: '&7✨ &d&lENCHANTER'
+          lore:
+            - ''
+            - '&7{description}'
+            - ''
+            - '&8▸ &7Status: {status}'
+            - '&8▸ &7Level: &e{level}&7/&e{max_level}'
+            - '&8▸ &7Progress: &e{exp}&7/&e{required}'
+            - ''
+            - '&e&l▶ CLICK TO SELECT'
+        
+        alchemist:
+          enabled: true
+          slot: 32
+          material: BREWING_STAND
+          sound: ENTITY_EXPERIENCE_ORB_PICKUP
+          name: '&7⚗ &5&lALCHEMIST'
+          lore:
+            - ''
+            - '&7{description}'
+            - ''
+            - '&8▸ &7Status: {status}'
+            - '&8▸ &7Level: &e{level}&7/&e{max_level}'
+            - '&8▸ &7Progress: &e{exp}&7/&e{required}'
+            - ''
+            - '&e&l▶ CLICK TO SELECT'
+      
+      buttons:
+        info:
+          enabled: true
+          slot: 49
+          material: BOOK
+          name: '&e&lJob Information'
+          lore:
+            - '&8&m────────────────'
+            - '&7Active Jobs: &e{active_count}&7/&e{max_jobs}'
+            - ''
+            - '&7Your Active Jobs:'
+            - '{active_jobs_list}'
+            - '&8&m────────────────'
+        
+        next-page:
+          enabled: true
+          slot: 50
+          material: ARROW
+          sound: ITEM_BOOK_PAGE_TURN
+          name: '&e&lNext Page »'
+          lore:
+            - '&7Go to page 2'
+        
+        close:
+          enabled: true
+          slot: 53
+          material: BARRIER
+          sound: UI_BUTTON_CLICK
+          name: '&c&lClose Menu'
+          lore:
+            - '&7Click to close'
+
+    page-2:
+      size: 36
+      fillers:
+        enabled: true
+        material: BLACK_STAINED_GLASS_PANE
+        name: ' '
+        lore: []
+      
+      jobs:
+        blacksmith:
+          enabled: true
+          slot: 10
+          material: ANVIL
+          sound: ENTITY_EXPERIENCE_ORB_PICKUP
+          name: '&7🔨 &8&lBLACKSMITH'
+          lore:
+            - ''
+            - '&7{description}'
+            - ''
+            - '&8▸ &7Status: {status}'
+            - '&8▸ &7Level: &e{level}&7/&e{max_level}'
+            - '&8▸ &7Progress: &e{exp}&7/&e{required}'
+            - ''
+            - '&e&l▶ CLICK TO SELECT'
+        
+        digger:
+          enabled: true
+          slot: 12
+          material: GOLDEN_SHOVEL
+          sound: ENTITY_EXPERIENCE_ORB_PICKUP
+          name: '&7⛏ &e&lDIGGER'
+          lore:
+            - ''
+            - '&7{description}'
+            - ''
+            - '&8▸ &7Status: {status}'
+            - '&8▸ &7Level: &e{level}&7/&e{max_level}'
+            - '&8▸ &7Progress: &e{exp}&7/&e{required}'
+            - ''
+            - '&e&l▶ CLICK TO SELECT'
+        
+        chef:
+          enabled: true
+          slot: 14
+          material: COOKED_BEEF
+          sound: ENTITY_EXPERIENCE_ORB_PICKUP
+          name: '&7👨‍🍳 &6&lCHEF'
+          lore:
+            - ''
+            - '&7{description}'
+            - ''
+            - '&8▸ &7Status: {status}'
+            - '&8▸ &7Level: &e{level}&7/&e{max_level}'
+            - '&8▸ &7Progress: &e{exp}&7/&e{required}'
+            - ''
+            - '&e&l▶ CLICK TO SELECT'
+        
+        murderer:
+          enabled: true
+          slot: 16
+          material: NETHERITE_SWORD
+          sound: ENTITY_EXPERIENCE_ORB_PICKUP
+          name: '&7⚔ &4&lMURDERER'
+          lore:
+            - ''
+            - '&7{description}'
+            - ''
+            - '&8▸ &7Status: {status}'
+            - '&8▸ &7Level: &e{level}&7/&e{max_level}'
+            - '&8▸ &7Progress: &e{exp}&7/&e{required}'
+            - ''
+            - '&e&l▶ CLICK TO SELECT'
+      
+      buttons:
+        info:
+          enabled: true
+          slot: 31
+          material: BOOK
+          name: '&e&lJob Information'
+          lore:
+            - '&8&m────────────────'
+            - '&7Active Jobs: &e{active_count}&7/&e{max_jobs}'
+            - ''
+            - '&7Your Active Jobs:'
+            - '{active_jobs_list}'
+            - '&8&m────────────────'
+        
+        previous-page:
+          enabled: true
+          slot: 30
+          material: ARROW
+          sound: ITEM_BOOK_PAGE_TURN
+          name: '&e&l« Previous Page'
+          lore:
+            - '&7Go to page 1'
+        
+        close:
+          enabled: true
+          slot: 35
+          material: BARRIER
+          sound: UI_BUTTON_CLICK
+          name: '&c&lClose Menu'
+          lore:
+            - '&7Click to close'
+  
+  progress-menu:
+    title: '&8▸ {job} &7Progress - Page {page}'
+    size: 54
+    levels-per-page: 28
+    level-slots:
+      - 10
+      - 11
+      - 12
+      - 13
+      - 14
+      - 15
+      - 16
+      - 19
+      - 20
+      - 21
+      - 22
+      - 23
+      - 24
+      - 25
+      - 28
+      - 29
+      - 30
+      - 31
+      - 32
+      - 33
+      - 34
+    fillers:
+      enabled: true
+      material: GRAY_STAINED_GLASS_PANE
+      name: ' '
+      lore: []
+    
+    level-items:
+      completed:
+        material: LIME_CONCRETE
+        name: '&a&lLevel {level} ✔'
+        lore:
+          - ''
+          - '&a&l✔ COMPLETED'
+          - ''
+          - '&7EXP Required: &e{required}'
+          - '&7Money Reward: &a${money}'
+      
+      current:
+        material: YELLOW_CONCRETE
+        name: '&e&lLevel {level} ⟳'
+        lore:
+          - ''
+          - '&e&l⟳ IN PROGRESS'
+          - ''
+          - '&7Progress: &e{exp}&7/&e{required}'
+          - '{progress_bar} &f({percentage}%)'
+          - '&7Money Reward: &a${money}'
+      
+      locked:
+        material: RED_CONCRETE
+        name: '&c&lLevel {level} ✗'
+        lore:
+          - ''
+          - '&c&l✗ LOCKED'
+          - ''
+          - '&7EXP Required: &e{required}'
+          - '&7Money Reward: &a${money}'
+    
+    buttons:
+      back:
+        enabled: true
+        slot: 45
+        material: STRUCTURE_VOID
+        sound: UI_BUTTON_CLICK
+        name: '&c&l← Back'
+        lore:
+          - '&7Return to job selection'
+      
+      previous-page:
+        enabled: true
+        slot: 48
+        material: ARROW
+        sound: ITEM_BOOK_PAGE_TURN
+        name: '&e&l« Previous Page'
+        lore:
+          - '&7Go to previous page'
+      
+      info:
+        enabled: true
+        slot: 49
+        material: BOOK
+        name: '&e&lJob Info'
+        lore:
+          - '&8&m────────────────'
+          - '&7Job: {job}'
+          - '&7Level: &e{level}&7/&e{max_level}'
+          - '&7EXP: &e{exp}&7/&e{required}'
+          - ''
+          - '&7Page: &e{page}&7/&e{total_pages}'
+          - '&8&m────────────────'
+      
+      next-page:
+        enabled: true
+        slot: 50
+        material: ARROW
+        sound: ITEM_BOOK_PAGE_TURN
+        name: '&e&lNext Page »'
+        lore:
+          - '&7Go to next page'
+      
+      leave:
+        enabled: true
+        slot: 53
+        material: BARRIER
+        sound: UI_BUTTON_CLICK
+        name: '&c&lLeave Job'
+        lore:
+          - '&7Click to leave your'
+          - '&7current job'
+          - ''
+          - '&c&l⚠ Warning:'
+          - '&7Your progress will be saved'
+
+messages:
+  no-permission: '&b&lJOBS &9/ &cYou do not have permission to do that!'
+  reload-success: '&b&lJOBS &9/ &aConfiguration reloaded successfully!'
+  only-players: '&b&lJOBS &9/ &cOnly players can use this command.'
+  
+  job-joined: '&b&lJOBS &9/ &7You have joined the &e{job} &ajob!'
+  job-left: '&b&lJOBS &9/ &7You have left your current job.'
+  job-not-found: '&b&lJOBS &9/ &7Job &e{job} &cnot found!'
+  must-leave-first: '&b&lJOBS &9/ &7You must leave your current job first!'
+  already-have-job: '&b&lJOBS &9/ &7You already have this job active!'
+  no-active-job: '&b&lJOBS &9/ &7You don''t have an active job!'
+  no-job-data: '&b&lJOBS &9/ &7You haven''t started the &e{job} &cjob yet!'
+  job-limit-reached: '&b&lJOBS &9/ &cYou have reached your job limit! ({current}/{max})'
+  
+  level-up-title: '&a&lLEVEL UP!'
+  level-up-subtitle: '&e{job} &7Level &b{level}'
+  level-up-broadcast: '{prefix}&e{player} &7has reached &b&lLevel {level} &7in &e{job}&7!'
+
+  reset-progress-success: '&b&lJOBS &9/ &aSuccessfully reset progress for &e{job}&a!'
+  reset-progress-no-data: '&b&lJOBS &9/ &cYou don''t have any progress in &e{job}&c!'
+  reset-progress-active-job: '&b&lJOBS &9/ &cYou must leave &e{job} &cbefore resetting its progress!'
+  reset-all-success: '&b&lJOBS &9/ &aSuccessfully reset all job progress for &e{player}&a!'
+  player-not-found: '&b&lJOBS &9/ &cPlayer not found!'
+
+# Default job limit for players without specific permission
+default-job-limit: 1

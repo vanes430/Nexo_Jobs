@@ -1,0 +1,2262 @@
+jobs:
+  miner:
+    display-name: 'MINER'
+    description: '&7Master the depths and extract valuable ores from the earth'
+    icon: IRON_PICKAXE
+    max-level: 50
+    levels:
+      1:
+        exp-required: 100
+        money-reward: 50.0
+      2:
+        exp-required: 150
+        money-reward: 75.0
+      3:
+        exp-required: 200
+        money-reward: 100.0
+      4:
+        exp-required: 300
+        money-reward: 150.0
+      5:
+        exp-required: 400
+        money-reward: 200.0
+      6:
+        exp-required: 500
+        money-reward: 250.0
+      7:
+        exp-required: 600
+        money-reward: 300.0
+      8:
+        exp-required: 750
+        money-reward: 400.0
+      9:
+        exp-required: 900
+        money-reward: 500.0
+      10:
+        exp-required: 1000
+        money-reward: 750.0
+      11:
+        exp-required: 1200
+        money-reward: 1000.0
+      12:
+        exp-required: 1400
+        money-reward: 1250.0
+      13:
+        exp-required: 1600
+        money-reward: 1500.0
+      14:
+        exp-required: 1800
+        money-reward: 1750.0
+      15:
+        exp-required: 2000
+        money-reward: 2000.0
+      16:
+        exp-required: 2300
+        money-reward: 2500.0
+      17:
+        exp-required: 2600
+        money-reward: 3000.0
+      18:
+        exp-required: 3000
+        money-reward: 3500.0
+      19:
+        exp-required: 3400
+        money-reward: 4000.0
+      20:
+        exp-required: 4000
+        money-reward: 5000.0
+      21:
+        exp-required: 4500
+        money-reward: 6000.0
+      22:
+        exp-required: 5000
+        money-reward: 7000.0
+      23:
+        exp-required: 5500
+        money-reward: 8000.0
+      24:
+        exp-required: 6000
+        money-reward: 9000.0
+      25:
+        exp-required: 7000
+        money-reward: 10000.0
+      26:
+        exp-required: 8000
+        money-reward: 12000.0
+      27:
+        exp-required: 9000
+        money-reward: 14000.0
+      28:
+        exp-required: 10000
+        money-reward: 16000.0
+      29:
+        exp-required: 11000
+        money-reward: 18000.0
+      30:
+        exp-required: 12000
+        money-reward: 20000.0
+      31:
+        exp-required: 13500
+        money-reward: 22000.0
+      32:
+        exp-required: 15000
+        money-reward: 24000.0
+      33:
+        exp-required: 16500
+        money-reward: 26000.0
+      34:
+        exp-required: 18000
+        money-reward: 28000.0
+      35:
+        exp-required: 20000
+        money-reward: 30000.0
+      36:
+        exp-required: 22000
+        money-reward: 33000.0
+      37:
+        exp-required: 24000
+        money-reward: 36000.0
+      38:
+        exp-required: 26000
+        money-reward: 39000.0
+      39:
+        exp-required: 28000
+        money-reward: 42000.0
+      40:
+        exp-required: 30000
+        money-reward: 45000.0
+      41:
+        exp-required: 33000
+        money-reward: 50000.0
+      42:
+        exp-required: 36000
+        money-reward: 55000.0
+      43:
+        exp-required: 39000
+        money-reward: 60000.0
+      44:
+        exp-required: 42000
+        money-reward: 65000.0
+      45:
+        exp-required: 45000
+        money-reward: 70000.0
+      46:
+        exp-required: 50000
+        money-reward: 80000.0
+      47:
+        exp-required: 55000
+        money-reward: 90000.0
+      48:
+        exp-required: 60000
+        money-reward: 100000.0
+      49:
+        exp-required: 70000
+        money-reward: 125000.0
+      50:
+        exp-required: 100000
+        money-reward: 200000.0
+    
+    actions:
+      break_stone:
+        exp: 2
+      break_cobblestone:
+        exp: 1
+      break_deepslate:
+        exp: 3
+      break_granite:
+        exp: 2
+      break_diorite:
+        exp: 2
+      break_andesite:
+        exp: 2
+      break_coal_ore:
+        exp: 5
+      break_deepslate_coal_ore:
+        exp: 6
+      break_iron_ore:
+        exp: 10
+      break_deepslate_iron_ore:
+        exp: 12
+      break_copper_ore:
+        exp: 8
+      break_deepslate_copper_ore:
+        exp: 10
+      break_gold_ore:
+        exp: 15
+      break_deepslate_gold_ore:
+        exp: 18
+      break_lapis_ore:
+        exp: 12
+      break_deepslate_lapis_ore:
+        exp: 15
+      break_redstone_ore:
+        exp: 15
+      break_deepslate_redstone_ore:
+        exp: 18
+      break_diamond_ore:
+        exp: 25
+      break_deepslate_diamond_ore:
+        exp: 30
+      break_emerald_ore:
+        exp: 30
+      break_deepslate_emerald_ore:
+        exp: 35
+      break_nether_quartz_ore:
+        exp: 8
+      break_nether_gold_ore:
+        exp: 12
+      break_ancient_debris:
+        exp: 50
+
+  builder:
+    display-name: 'BUILDER'
+    description: '&7Construct grand structures and shape the world around you'
+    icon: BRICKS
+    max-level: 50
+    
+    levels:
+      1:
+        exp-required: 100
+        money-reward: 50.0
+      2:
+        exp-required: 150
+        money-reward: 75.0
+      3:
+        exp-required: 200
+        money-reward: 100.0
+      4:
+        exp-required: 300
+        money-reward: 150.0
+      5:
+        exp-required: 400
+        money-reward: 200.0
+      6:
+        exp-required: 500
+        money-reward: 250.0
+      7:
+        exp-required: 600
+        money-reward: 300.0
+      8:
+        exp-required: 750
+        money-reward: 400.0
+      9:
+        exp-required: 900
+        money-reward: 500.0
+      10:
+        exp-required: 1000
+        money-reward: 750.0
+      11:
+        exp-required: 1200
+        money-reward: 1000.0
+      12:
+        exp-required: 1400
+        money-reward: 1250.0
+      13:
+        exp-required: 1600
+        money-reward: 1500.0
+      14:
+        exp-required: 1800
+        money-reward: 1750.0
+      15:
+        exp-required: 2000
+        money-reward: 2000.0
+      16:
+        exp-required: 2300
+        money-reward: 2500.0
+      17:
+        exp-required: 2600
+        money-reward: 3000.0
+      18:
+        exp-required: 3000
+        money-reward: 3500.0
+      19:
+        exp-required: 3400
+        money-reward: 4000.0
+      20:
+        exp-required: 4000
+        money-reward: 5000.0
+      21:
+        exp-required: 4500
+        money-reward: 6000.0
+      22:
+        exp-required: 5000
+        money-reward: 7000.0
+      23:
+        exp-required: 5500
+        money-reward: 8000.0
+      24:
+        exp-required: 6000
+        money-reward: 9000.0
+      25:
+        exp-required: 7000
+        money-reward: 10000.0
+      26:
+        exp-required: 8000
+        money-reward: 12000.0
+      27:
+        exp-required: 9000
+        money-reward: 14000.0
+      28:
+        exp-required: 10000
+        money-reward: 16000.0
+      29:
+        exp-required: 11000
+        money-reward: 18000.0
+      30:
+        exp-required: 12000
+        money-reward: 20000.0
+      31:
+        exp-required: 13500
+        money-reward: 22000.0
+      32:
+        exp-required: 15000
+        money-reward: 24000.0
+      33:
+        exp-required: 16500
+        money-reward: 26000.0
+      34:
+        exp-required: 18000
+        money-reward: 28000.0
+      35:
+        exp-required: 20000
+        money-reward: 30000.0
+      36:
+        exp-required: 22000
+        money-reward: 33000.0
+      37:
+        exp-required: 24000
+        money-reward: 36000.0
+      38:
+        exp-required: 26000
+        money-reward: 39000.0
+      39:
+        exp-required: 28000
+        money-reward: 42000.0
+      40:
+        exp-required: 30000
+        money-reward: 45000.0
+      41:
+        exp-required: 33000
+        money-reward: 50000.0
+      42:
+        exp-required: 36000
+        money-reward: 55000.0
+      43:
+        exp-required: 39000
+        money-reward: 60000.0
+      44:
+        exp-required: 42000
+        money-reward: 65000.0
+      45:
+        exp-required: 45000
+        money-reward: 70000.0
+      46:
+        exp-required: 50000
+        money-reward: 80000.0
+      47:
+        exp-required: 55000
+        money-reward: 90000.0
+      48:
+        exp-required: 60000
+        money-reward: 100000.0
+      49:
+        exp-required: 70000
+        money-reward: 125000.0
+      50:
+        exp-required: 100000
+        money-reward: 200000.0
+    
+    actions:
+      place_stone:
+        exp: 1
+      place_cobblestone:
+        exp: 1
+      place_stone_bricks:
+        exp: 2
+      place_bricks:
+        exp: 3
+      place_oak_planks:
+        exp: 2
+      place_spruce_planks:
+        exp: 2
+      place_birch_planks:
+        exp: 2
+      place_jungle_planks:
+        exp: 2
+      place_acacia_planks:
+        exp: 2
+      place_dark_oak_planks:
+        exp: 2
+      place_mangrove_planks:
+        exp: 2
+      place_cherry_planks:
+        exp: 2
+      place_glass:
+        exp: 2
+      place_white_stained_glass:
+        exp: 3
+      place_oak_stairs:
+        exp: 2
+      place_oak_slab:
+        exp: 1
+      place_quartz_block:
+        exp: 4
+      place_sandstone:
+        exp: 2
+      place_red_sandstone:
+        exp: 2
+      place_prismarine:
+        exp: 3
+      place_concrete:
+        exp: 3
+      place_terracotta:
+        exp: 2
+
+  farmer:
+    display-name: 'FARMER'
+    description: '&7Harvest bountiful crops and raise thriving livestock'
+    icon: GOLDEN_HOE
+    max-level: 50
+    
+    levels:
+      1:
+        exp-required: 80
+        money-reward: 40.0
+      2:
+        exp-required: 120
+        money-reward: 60.0
+      3:
+        exp-required: 160
+        money-reward: 80.0
+      4:
+        exp-required: 240
+        money-reward: 120.0
+      5:
+        exp-required: 320
+        money-reward: 160.0
+      6:
+        exp-required: 400
+        money-reward: 200.0
+      7:
+        exp-required: 500
+        money-reward: 250.0
+      8:
+        exp-required: 600
+        money-reward: 320.0
+      9:
+        exp-required: 720
+        money-reward: 400.0
+      10:
+        exp-required: 800
+        money-reward: 600.0
+      11:
+        exp-required: 1000
+        money-reward: 800.0
+      12:
+        exp-required: 1200
+        money-reward: 1000.0
+      13:
+        exp-required: 1400
+        money-reward: 1200.0
+      14:
+        exp-required: 1600
+        money-reward: 1400.0
+      15:
+        exp-required: 1800
+        money-reward: 1600.0
+      16:
+        exp-required: 2000
+        money-reward: 2000.0
+      17:
+        exp-required: 2200
+        money-reward: 2400.0
+      18:
+        exp-required: 2500
+        money-reward: 2800.0
+      19:
+        exp-required: 2800
+        money-reward: 3200.0
+      20:
+        exp-required: 3200
+        money-reward: 4000.0
+      21:
+        exp-required: 3600
+        money-reward: 4800.0
+      22:
+        exp-required: 4000
+        money-reward: 5600.0
+      23:
+        exp-required: 4500
+        money-reward: 6400.0
+      24:
+        exp-required: 5000
+        money-reward: 7200.0
+      25:
+        exp-required: 5600
+        money-reward: 8000.0
+      26:
+        exp-required: 6400
+        money-reward: 9600.0
+      27:
+        exp-required: 7200
+        money-reward: 11200.0
+      28:
+        exp-required: 8000
+        money-reward: 12800.0
+      29:
+        exp-required: 9000
+        money-reward: 14400.0
+      30:
+        exp-required: 10000
+        money-reward: 16000.0
+      31:
+        exp-required: 11000
+        money-reward: 17600.0
+      32:
+        exp-required: 12000
+        money-reward: 19200.0
+      33:
+        exp-required: 13200
+        money-reward: 20800.0
+      34:
+        exp-required: 14400
+        money-reward: 22400.0
+      35:
+        exp-required: 16000
+        money-reward: 24000.0
+      36:
+        exp-required: 17600
+        money-reward: 26400.0
+      37:
+        exp-required: 19200
+        money-reward: 28800.0
+      38:
+        exp-required: 20800
+        money-reward: 31200.0
+      39:
+        exp-required: 22400
+        money-reward: 33600.0
+      40:
+        exp-required: 24000
+        money-reward: 36000.0
+      41:
+        exp-required: 26400
+        money-reward: 40000.0
+      42:
+        exp-required: 28800
+        money-reward: 44000.0
+      43:
+        exp-required: 31200
+        money-reward: 48000.0
+      44:
+        exp-required: 33600
+        money-reward: 52000.0
+      45:
+        exp-required: 36000
+        money-reward: 56000.0
+      46:
+        exp-required: 40000
+        money-reward: 64000.0
+      47:
+        exp-required: 44000
+        money-reward: 72000.0
+      48:
+        exp-required: 48000
+        money-reward: 80000.0
+      49:
+        exp-required: 56000
+        money-reward: 100000.0
+      50:
+        exp-required: 80000
+        money-reward: 160000.0
+    
+    actions:
+      harvest_wheat:
+        exp: 3
+      harvest_carrots:
+        exp: 3
+      harvest_potatoes:
+        exp: 3
+      harvest_beetroots:
+        exp: 3
+      harvest_sweet_berry_bush:
+        exp: 4
+      harvest_melon:
+        exp: 5
+      harvest_pumpkin:
+        exp: 5
+      harvest_sugar_cane:
+        exp: 2
+      harvest_cactus:
+        exp: 2
+      harvest_bamboo:
+        exp: 2
+      harvest_cocoa:
+        exp: 4
+      harvest_nether_wart:
+        exp: 6
+      breed_cow:
+        exp: 15
+      breed_sheep:
+        exp: 15
+      breed_pig:
+        exp: 15
+      breed_chicken:
+        exp: 12
+      breed_rabbit:
+        exp: 12
+      breed_horse:
+        exp: 20
+      breed_donkey:
+        exp: 20
+      breed_llama:
+        exp: 18
+      breed_wolf:
+        exp: 15
+      breed_cat:
+        exp: 15
+
+  hunter:
+    display-name: 'HUNTER'
+    description: '&7Track and eliminate dangerous creatures lurking in the shadows'
+    icon: BOW
+    max-level: 50
+    
+    levels:
+      1:
+        exp-required: 120
+        money-reward: 60.0
+      2:
+        exp-required: 180
+        money-reward: 90.0
+      3:
+        exp-required: 240
+        money-reward: 120.0
+      4:
+        exp-required: 360
+        money-reward: 180.0
+      5:
+        exp-required: 480
+        money-reward: 240.0
+      6:
+        exp-required: 600
+        money-reward: 300.0
+      7:
+        exp-required: 750
+        money-reward: 375.0
+      8:
+        exp-required: 900
+        money-reward: 480.0
+      9:
+        exp-required: 1080
+        money-reward: 600.0
+      10:
+        exp-required: 1200
+        money-reward: 900.0
+      11:
+        exp-required: 1500
+        money-reward: 1200.0
+      12:
+        exp-required: 1800
+        money-reward: 1500.0
+      13:
+        exp-required: 2100
+        money-reward: 1800.0
+      14:
+        exp-required: 2400
+        money-reward: 2100.0
+      15:
+        exp-required: 2700
+        money-reward: 2400.0
+      16:
+        exp-required: 3000
+        money-reward: 3000.0
+      17:
+        exp-required: 3300
+        money-reward: 3600.0
+      18:
+        exp-required: 3750
+        money-reward: 4200.0
+      19:
+        exp-required: 4200
+        money-reward: 4800.0
+      20:
+        exp-required: 4800
+        money-reward: 6000.0
+      21:
+        exp-required: 5400
+        money-reward: 7200.0
+      22:
+        exp-required: 6000
+        money-reward: 8400.0
+      23:
+        exp-required: 6750
+        money-reward: 9600.0
+      24:
+        exp-required: 7500
+        money-reward: 10800.0
+      25:
+        exp-required: 8400
+        money-reward: 12000.0
+      26:
+        exp-required: 9600
+        money-reward: 14400.0
+      27:
+        exp-required: 10800
+        money-reward: 16800.0
+      28:
+        exp-required: 12000
+        money-reward: 19200.0
+      29:
+        exp-required: 13500
+        money-reward: 21600.0
+      30:
+        exp-required: 15000
+        money-reward: 24000.0
+      31:
+        exp-required: 16500
+        money-reward: 26400.0
+      32:
+        exp-required: 18000
+        money-reward: 28800.0
+      33:
+        exp-required: 19800
+        money-reward: 31200.0
+      34:
+        exp-required: 21600
+        money-reward: 33600.0
+      35:
+        exp-required: 24000
+        money-reward: 36000.0
+      36:
+        exp-required: 26400
+        money-reward: 39600.0
+      37:
+        exp-required: 28800
+        money-reward: 43200.0
+      38:
+        exp-required: 31200
+        money-reward: 46800.0
+      39:
+        exp-required: 33600
+        money-reward: 50400.0
+      40:
+        exp-required: 36000
+        money-reward: 54000.0
+      41:
+        exp-required: 39600
+        money-reward: 60000.0
+      42:
+        exp-required: 43200
+        money-reward: 66000.0
+      43:
+        exp-required: 46800
+        money-reward: 72000.0
+      44:
+        exp-required: 50400
+        money-reward: 78000.0
+      45:
+        exp-required: 54000
+        money-reward: 84000.0
+      46:
+        exp-required: 60000
+        money-reward: 96000.0
+      47:
+        exp-required: 66000
+        money-reward: 108000.0
+      48:
+        exp-required: 72000
+        money-reward: 120000.0
+      49:
+        exp-required: 84000
+        money-reward: 150000.0
+      50:
+        exp-required: 120000
+        money-reward: 240000.0
+    
+    actions:
+      kill_zombie:
+        exp: 10
+      kill_skeleton:
+        exp: 12
+      kill_creeper:
+        exp: 15
+      kill_spider:
+        exp: 10
+      kill_cave_spider:
+        exp: 12
+      kill_enderman:
+        exp: 20
+      kill_witch:
+        exp: 18
+      kill_zombie_villager:
+        exp: 12
+      kill_husk:
+        exp: 12
+      kill_stray:
+        exp: 14
+      kill_drowned:
+        exp: 15
+      kill_phantom:
+        exp: 18
+      kill_pillager:
+        exp: 15
+      kill_vindicator:
+        exp: 18
+      kill_evoker:
+        exp: 25
+      kill_ravager:
+        exp: 30
+      kill_zombified_piglin:
+        exp: 15
+      kill_piglin:
+        exp: 12
+      kill_piglin_brute:
+        exp: 22
+      kill_blaze:
+        exp: 20
+      kill_ghast:
+        exp: 25
+      kill_magma_cube:
+        exp: 15
+      kill_hoglin:
+        exp: 18
+      kill_wither_skeleton:
+        exp: 25
+      kill_endermite:
+        exp: 8
+      kill_shulker:
+        exp: 30
+      kill_wither:
+        exp: 500
+      kill_ender_dragon:
+        exp: 1000
+      kill_warden:
+        exp: 750
+      kill_elder_guardian:
+        exp: 200
+
+  fishing:
+    display-name: 'FISHING'
+    description: '&7Catch rare fish and treasures from the ocean'
+    icon: FISHING_ROD
+    max-level: 50
+    
+    levels:
+    
+    actions:
+      catch_cod:
+        exp: 3
+
+  lumberjack:
+    display-name: 'LUMBERJACK'
+    description: '&7Harvest timber and master the forests'
+    icon: IRON_AXE
+    max-level: 50
+    
+    levels:
+      1:
+        exp-required: 90
+        money-reward: 45.0
+      2:
+        exp-required: 140
+        money-reward: 70.0
+      3:
+        exp-required: 190
+        money-reward: 95.0
+      4:
+        exp-required: 280
+        money-reward: 140.0
+      5:
+        exp-required: 380
+        money-reward: 190.0
+      6:
+        exp-required: 480
+        money-reward: 240.0
+      7:
+        exp-required: 580
+        money-reward: 290.0
+      8:
+        exp-required: 720
+        money-reward: 380.0
+      9:
+        exp-required: 860
+        money-reward: 480.0
+      10:
+        exp-required: 950
+        money-reward: 720.0
+      11:
+        exp-required: 1150
+        money-reward: 950.0
+      12:
+        exp-required: 1350
+        money-reward: 1200.0
+      13:
+        exp-required: 1550
+        money-reward: 1450.0
+      14:
+        exp-required: 1750
+        money-reward: 1700.0
+      15:
+        exp-required: 1950
+        money-reward: 1950.0
+      16:
+        exp-required: 2250
+        money-reward: 2400.0
+      17:
+        exp-required: 2550
+        money-reward: 2850.0
+      18:
+        exp-required: 2900
+        money-reward: 3400.0
+      19:
+        exp-required: 3300
+        money-reward: 3900.0
+      20:
+        exp-required: 3900
+        money-reward: 4800.0
+      21:
+        exp-required: 4400
+        money-reward: 5800.0
+      22:
+        exp-required: 4900
+        money-reward: 6800.0
+      23:
+        exp-required: 5400
+        money-reward: 7800.0
+      24:
+        exp-required: 5900
+        money-reward: 8800.0
+      25:
+        exp-required: 6800
+        money-reward: 9800.0
+      26:
+        exp-required: 7800
+        money-reward: 11500.0
+      27:
+        exp-required: 8800
+        money-reward: 13500.0
+      28:
+        exp-required: 9800
+        money-reward: 15500.0
+      29:
+        exp-required: 10800
+        money-reward: 17500.0
+      30:
+        exp-required: 11800
+        money-reward: 19500.0
+      31:
+        exp-required: 13200
+        money-reward: 21500.0
+      32:
+        exp-required: 14700
+        money-reward: 23500.0
+      33:
+        exp-required: 16200
+        money-reward: 25500.0
+      34:
+        exp-required: 17700
+        money-reward: 27500.0
+      35:
+        exp-required: 19500
+        money-reward: 29500.0
+      36:
+        exp-required: 21500
+        money-reward: 32500.0
+      37:
+        exp-required: 23500
+        money-reward: 35500.0
+      38:
+        exp-required: 25500
+        money-reward: 38500.0
+      39:
+        exp-required: 27500
+        money-reward: 41500.0
+      40:
+        exp-required: 29500
+        money-reward: 44500.0
+      41:
+        exp-required: 32500
+        money-reward: 49500.0
+      42:
+        exp-required: 35500
+        money-reward: 54500.0
+      43:
+        exp-required: 38500
+        money-reward: 59500.0
+      44:
+        exp-required: 41500
+        money-reward: 64500.0
+      45:
+        exp-required: 44500
+        money-reward: 69500.0
+      46:
+        exp-required: 49500
+        money-reward: 79500.0
+      47:
+        exp-required: 54500
+        money-reward: 89500.0
+      48:
+        exp-required: 59500
+        money-reward: 99500.0
+      49:
+        exp-required: 69500
+        money-reward: 124500.0
+      50:
+        exp-required: 99500
+        money-reward: 199500.0
+    
+    actions:
+      break_oak_log:
+        exp: 3
+      break_spruce_log:
+        exp: 3
+      break_birch_log:
+        exp: 3
+      break_jungle_log:
+        exp: 4
+      break_acacia_log:
+        exp: 3
+      break_dark_oak_log:
+        exp: 4
+      break_mangrove_log:
+        exp: 4
+      break_cherry_log:
+        exp: 5
+      break_stripped_oak_log:
+        exp: 4
+      break_stripped_spruce_log:
+        exp: 4
+      break_stripped_birch_log:
+        exp: 4
+      break_stripped_jungle_log:
+        exp: 5
+      break_stripped_acacia_log:
+        exp: 4
+      break_stripped_dark_oak_log:
+        exp: 5
+      break_stripped_mangrove_log:
+        exp: 5
+      break_stripped_cherry_log:
+        exp: 6
+      break_oak_wood:
+        exp: 2
+      break_spruce_wood:
+        exp: 2
+      break_birch_wood:
+        exp: 2
+      break_jungle_wood:
+        exp: 3
+      break_acacia_wood:
+        exp: 2
+      break_dark_oak_wood:
+        exp: 3
+      break_mushroom_stem:
+        exp: 5
+      break_brown_mushroom_block:
+        exp: 4
+      break_red_mushroom_block:
+        exp: 4
+
+  enchanter:
+    display-name: 'ENCHANTER'
+    description: '&7Master arcane arts and powerful enchantments'
+    icon: ENCHANTING_TABLE
+    max-level: 50
+    
+    levels:
+      1:
+        exp-required: 150
+        money-reward: 75.0
+      2:
+        exp-required: 220
+        money-reward: 110.0
+      3:
+        exp-required: 300
+        money-reward: 150.0
+      4:
+        exp-required: 450
+        money-reward: 225.0
+      5:
+        exp-required: 600
+        money-reward: 300.0
+      6:
+        exp-required: 750
+        money-reward: 375.0
+      7:
+        exp-required: 900
+        money-reward: 450.0
+      8:
+        exp-required: 1100
+        money-reward: 550.0
+      9:
+        exp-required: 1350
+        money-reward: 700.0
+      10:
+        exp-required: 1500
+        money-reward: 1000.0
+      11:
+        exp-required: 1800
+        money-reward: 1350.0
+      12:
+        exp-required: 2100
+        money-reward: 1700.0
+      13:
+        exp-required: 2400
+        money-reward: 2050.0
+      14:
+        exp-required: 2700
+        money-reward: 2400.0
+      15:
+        exp-required: 3000
+        money-reward: 2750.0
+      16:
+        exp-required: 3400
+        money-reward: 3300.0
+      17:
+        exp-required: 3800
+        money-reward: 3900.0
+      18:
+        exp-required: 4400
+        money-reward: 4500.0
+      19:
+        exp-required: 5000
+        money-reward: 5200.0
+      20:
+        exp-required: 6000
+        money-reward: 6500.0
+      21:
+        exp-required: 6800
+        money-reward: 7800.0
+      22:
+        exp-required: 7500
+        money-reward: 9100.0
+      23:
+        exp-required: 8300
+        money-reward: 10400.0
+      24:
+        exp-required: 9000
+        money-reward: 11700.0
+      25:
+        exp-required: 10500
+        money-reward: 13000.0
+      26:
+        exp-required: 12000
+        money-reward: 15600.0
+      27:
+        exp-required: 13500
+        money-reward: 18200.0
+      28:
+        exp-required: 15000
+        money-reward: 20800.0
+      29:
+        exp-required: 16500
+        money-reward: 23400.0
+      30:
+        exp-required: 18000
+        money-reward: 26000.0
+      31:
+        exp-required: 20200
+        money-reward: 28600.0
+      32:
+        exp-required: 22500
+        money-reward: 31200.0
+      33:
+        exp-required: 24800
+        money-reward: 33800.0
+      34:
+        exp-required: 27000
+        money-reward: 36400.0
+      35:
+        exp-required: 30000
+        money-reward: 39000.0
+      36:
+        exp-required: 33000
+        money-reward: 42900.0
+      37:
+        exp-required: 36000
+        money-reward: 46800.0
+      38:
+        exp-required: 39000
+        money-reward: 50700.0
+      39:
+        exp-required: 42000
+        money-reward: 54600.0
+      40:
+        exp-required: 45000
+        money-reward: 58500.0
+      41:
+        exp-required: 49500
+        money-reward: 65000.0
+      42:
+        exp-required: 54000
+        money-reward: 71500.0
+      43:
+        exp-required: 58500
+        money-reward: 78000.0
+      44:
+        exp-required: 63000
+        money-reward: 84500.0
+      45:
+        exp-required: 67500
+        money-reward: 91000.0
+      46:
+        exp-required: 75000
+        money-reward: 104000.0
+      47:
+        exp-required: 82500
+        money-reward: 117000.0
+      48:
+        exp-required: 90000
+        money-reward: 130000.0
+      49:
+        exp-required: 105000
+        money-reward: 162500.0
+      50:
+        exp-required: 150000
+        money-reward: 260000.0
+    actions:
+      enchant_item:
+        exp: 10
+      enchant_level_1:
+        exp: 5
+      enchant_level_2:
+        exp: 8
+      enchant_level_3:
+        exp: 12
+      enchant_level_4:
+        exp: 16
+      enchant_level_5:
+        exp: 20
+      enchant_level_10:
+        exp: 35
+      enchant_level_15:
+        exp: 50
+      enchant_level_20:
+        exp: 70
+      enchant_level_25:
+        exp: 90
+      enchant_level_30:
+        exp: 120
+      use_anvil_combine:
+        exp: 8
+      use_anvil_rename:
+        exp: 5
+      use_anvil_repair:
+        exp: 6
+      use_grindstone:
+        exp: 4
+
+  alchemist:
+    display-name: 'ALCHEMIST'
+    description: '&7Brew powerful potions and mystical elixirs'
+    icon: BREWING_STAND
+    max-level: 50
+    
+    levels:
+      1:
+        exp-required: 130
+        money-reward: 65.0
+      2:
+        exp-required: 200
+        money-reward: 100.0
+      3:
+        exp-required: 270
+        money-reward: 135.0
+      4:
+        exp-required: 400
+        money-reward: 200.0
+      5:
+        exp-required: 540
+        money-reward: 270.0
+      6:
+        exp-required: 680
+        money-reward: 340.0
+      7:
+        exp-required: 820
+        money-reward: 410.0
+      8:
+        exp-required: 1000
+        money-reward: 520.0
+      9:
+        exp-required: 1200
+        money-reward: 650.0
+      10:
+        exp-required: 1350
+        money-reward: 900.0
+      11:
+        exp-required: 1650
+        money-reward: 1200.0
+      12:
+        exp-required: 1950
+        money-reward: 1500.0
+      13:
+        exp-required: 2250
+        money-reward: 1800.0
+      14:
+        exp-required: 2550
+        money-reward: 2100.0
+      15:
+        exp-required: 2850
+        money-reward: 2400.0
+      16:
+        exp-required: 3250
+        money-reward: 3000.0
+      17:
+        exp-required: 3650
+        money-reward: 3600.0
+      18:
+        exp-required: 4200
+        money-reward: 4200.0
+      19:
+        exp-required: 4800
+        money-reward: 4900.0
+      20:
+        exp-required: 5700
+        money-reward: 6200.0
+      21:
+        exp-required: 6500
+        money-reward: 7500.0
+      22:
+        exp-required: 7200
+        money-reward: 8800.0
+      23:
+        exp-required: 8000
+        money-reward: 10100.0
+      24:
+        exp-required: 8700
+        money-reward: 11400.0
+      25:
+        exp-required: 10000
+        money-reward: 12700.0
+      26:
+        exp-required: 11500
+        money-reward: 15200.0
+      27:
+        exp-required: 13000
+        money-reward: 17700.0
+      28:
+        exp-required: 14500
+        money-reward: 20200.0
+      29:
+        exp-required: 16000
+        money-reward: 22700.0
+      30:
+        exp-required: 17500
+        money-reward: 25200.0
+      31:
+        exp-required: 19500
+        money-reward: 27700.0
+      32:
+        exp-required: 21800
+        money-reward: 30200.0
+      33:
+        exp-required: 24000
+        money-reward: 32700.0
+      34:
+        exp-required: 26200
+        money-reward: 35200.0
+      35:
+        exp-required: 29000
+        money-reward: 37700.0
+      36:
+        exp-required: 32000
+        money-reward: 41500.0
+      37:
+        exp-required: 35000
+        money-reward: 45300.0
+      38:
+        exp-required: 38000
+        money-reward: 49100.0
+      39:
+        exp-required: 41000
+        money-reward: 52900.0
+      40:
+        exp-required: 44000
+        money-reward: 56700.0
+      41:
+        exp-required: 48500
+        money-reward: 63000.0
+      42:
+        exp-required: 53000
+        money-reward: 69300.0
+      43:
+        exp-required: 57500
+        money-reward: 75600.0
+      44:
+        exp-required: 62000
+        money-reward: 81900.0
+      45:
+        exp-required: 66500
+        money-reward: 88200.0
+      46:
+        exp-required: 74000
+        money-reward: 101000.0
+      47:
+        exp-required: 81500
+        money-reward: 113800.0
+      48:
+        exp-required: 89000
+        money-reward: 126600.0
+      49:
+        exp-required: 104000
+        money-reward: 158000.0
+      50:
+        exp-required: 148000
+        money-reward: 252000.0
+    
+    actions:
+      brew_awkward_potion:
+        exp: 5
+      brew_thick_potion:
+        exp: 3
+      brew_mundane_potion:
+        exp: 3
+      brew_regeneration:
+        exp: 12
+      brew_swiftness:
+        exp: 10
+      brew_fire_resistance:
+        exp: 14
+      brew_healing:
+        exp: 15
+      brew_night_vision:
+        exp: 10
+      brew_strength:
+        exp: 16
+      brew_leaping:
+        exp: 12
+      brew_water_breathing:
+        exp: 14
+      brew_invisibility:
+        exp: 18
+      brew_poison:
+        exp: 12
+      brew_weakness:
+        exp: 8
+      brew_slowness:
+        exp: 8
+      brew_harming:
+        exp: 15
+      brew_turtle_master:
+        exp: 20
+      brew_slow_falling:
+        exp: 12
+      brew_enhanced_potion:
+        exp: 8
+      brew_extended_potion:
+        exp: 6
+      brew_splash_potion:
+        exp: 5
+      brew_lingering_potion:
+        exp: 10
+      brew_dragon_breath:
+        exp: 25
+
+  blacksmith:
+    display-name: 'BLACKSMITH'
+    description: '&7Forge powerful weapons and armor from metals'
+    icon: ANVIL
+    max-level: 50
+    
+    levels:
+      1:
+        exp-required: 110
+        money-reward: 55.0
+      2:
+        exp-required: 170
+        money-reward: 85.0
+      3:
+        exp-required: 230
+        money-reward: 115.0
+      4:
+        exp-required: 340
+        money-reward: 170.0
+      5:
+        exp-required: 460
+        money-reward: 230.0
+      6:
+        exp-required: 580
+        money-reward: 290.0
+      7:
+        exp-required: 700
+        money-reward: 350.0
+      8:
+        exp-required: 850
+        money-reward: 450.0
+      9:
+        exp-required: 1000
+        money-reward: 550.0
+      10:
+        exp-required: 1100
+        money-reward: 800.0
+      11:
+        exp-required: 1350
+        money-reward: 1100.0
+      12:
+        exp-required: 1600
+        money-reward: 1400.0
+      13:
+        exp-required: 1850
+        money-reward: 1700.0
+      14:
+        exp-required: 2100
+        money-reward: 2000.0
+      15:
+        exp-required: 2350
+        money-reward: 2300.0
+      16:
+        exp-required: 2700
+        money-reward: 2800.0
+      17:
+        exp-required: 3050
+        money-reward: 3300.0
+      18:
+        exp-required: 3500
+        money-reward: 3800.0
+      19:
+        exp-required: 3950
+        money-reward: 4400.0
+      20:
+        exp-required: 4600
+        money-reward: 5500.0
+      21:
+        exp-required: 5200
+        money-reward: 6600.0
+      22:
+        exp-required: 5800
+        money-reward: 7700.0
+      23:
+        exp-required: 6400
+        money-reward: 8800.0
+      24:
+        exp-required: 7000
+        money-reward: 9900.0
+      25:
+        exp-required: 8000
+        money-reward: 11000.0
+      26:
+        exp-required: 9200
+        money-reward: 13200.0
+      27:
+        exp-required: 10400
+        money-reward: 15400.0
+      28:
+        exp-required: 11600
+        money-reward: 17600.0
+      29:
+        exp-required: 12800
+        money-reward: 19800.0
+      30:
+        exp-required: 14000
+        money-reward: 22000.0
+      31:
+        exp-required: 15500
+        money-reward: 24200.0
+      32:
+        exp-required: 17200
+        money-reward: 26400.0
+      33:
+        exp-required: 18900
+        money-reward: 28600.0
+      34:
+        exp-required: 20600
+        money-reward: 30800.0
+      35:
+        exp-required: 22500
+        money-reward: 33000.0
+      36:
+        exp-required: 24800
+        money-reward: 36300.0
+      37:
+        exp-required: 27100
+        money-reward: 39600.0
+      38:
+        exp-required: 29400
+        money-reward: 42900.0
+      39:
+        exp-required: 31700
+        money-reward: 46200.0
+      40:
+        exp-required: 34000
+        money-reward: 49500.0
+      41:
+        exp-required: 37400
+        money-reward: 55000.0
+      42:
+        exp-required: 40800
+        money-reward: 60500.0
+      43:
+        exp-required: 44200
+        money-reward: 66000.0
+      44:
+        exp-required: 47600
+        money-reward: 71500.0
+      45:
+        exp-required: 51000
+        money-reward: 77000.0
+      46:
+        exp-required: 56500
+        money-reward: 88000.0
+      47:
+        exp-required: 62000
+        money-reward: 99000.0
+      48:
+        exp-required: 67500
+        money-reward: 110000.0
+      49:
+        exp-required: 79000
+        money-reward: 137500.0
+      50:
+        exp-required: 113000
+        money-reward: 220000.0
+    
+    actions:
+      smelt_iron_ingot:
+        exp: 5
+      smelt_gold_ingot:
+        exp: 8
+      smelt_copper_ingot:
+        exp: 4
+      smelt_netherite_scrap:
+        exp: 50
+      craft_iron_sword:
+        exp: 10
+      craft_iron_pickaxe:
+        exp: 10
+      craft_iron_axe:
+        exp: 10
+      craft_iron_shovel:
+        exp: 8
+      craft_iron_hoe:
+        exp: 8
+      craft_iron_helmet:
+        exp: 12
+      craft_iron_chestplate:
+        exp: 15
+      craft_iron_leggings:
+        exp: 14
+      craft_iron_boots:
+        exp: 10
+      craft_golden_sword:
+        exp: 15
+      craft_golden_pickaxe:
+        exp: 15
+      craft_golden_axe:
+        exp: 15
+      craft_golden_shovel:
+        exp: 12
+      craft_golden_hoe:
+        exp: 12
+      craft_golden_helmet:
+        exp: 18
+      craft_golden_chestplate:
+        exp: 22
+      craft_golden_leggings:
+        exp: 20
+      craft_golden_boots:
+        exp: 15
+      craft_diamond_sword:
+        exp: 25
+      craft_diamond_pickaxe:
+        exp: 25
+      craft_diamond_axe:
+        exp: 25
+      craft_diamond_shovel:
+        exp: 20
+      craft_diamond_hoe:
+        exp: 20
+      craft_diamond_helmet:
+        exp: 30
+      craft_diamond_chestplate:
+        exp: 35
+      craft_diamond_leggings:
+        exp: 33
+      craft_diamond_boots:
+        exp: 25
+      craft_netherite_sword:
+        exp: 100
+      craft_netherite_pickaxe:
+        exp: 100
+      craft_netherite_axe:
+        exp: 100
+      craft_netherite_shovel:
+        exp: 80
+      craft_netherite_hoe:
+        exp: 80
+      craft_netherite_helmet:
+        exp: 120
+      craft_netherite_chestplate:
+        exp: 140
+      craft_netherite_leggings:
+        exp: 130
+      craft_netherite_boots:
+        exp: 100
+      craft_shield:
+        exp: 15
+      craft_shears:
+        exp: 8
+      use_smithing_table:
+        exp: 50
+
+  digger:
+    display-name: 'DIGGER'
+    description: '&7Clear lands and excavate the earth efficiently'
+    icon: GOLDEN_SHOVEL
+    max-level: 50
+    
+    levels:
+      1:
+        exp-required: 70
+        money-reward: 35.0
+      2:
+        exp-required: 110
+        money-reward: 55.0
+      3:
+        exp-required: 150
+        money-reward: 75.0
+      4:
+        exp-required: 220
+        money-reward: 110.0
+      5:
+        exp-required: 300
+        money-reward: 150.0
+      6:
+        exp-required: 380
+        money-reward: 190.0
+      7:
+        exp-required: 460
+        money-reward: 230.0
+      8:
+        exp-required: 560
+        money-reward: 300.0
+      9:
+        exp-required: 670
+        money-reward: 380.0
+      10:
+        exp-required: 750
+        money-reward: 560.0
+      11:
+        exp-required: 920
+        money-reward: 750.0
+      12:
+        exp-required: 1090
+        money-reward: 950.0
+      13:
+        exp-required: 1260
+        money-reward: 1150.0
+      14:
+        exp-required: 1430
+        money-reward: 1350.0
+      15:
+        exp-required: 1600
+        money-reward: 1550.0
+      16:
+        exp-required: 1850
+        money-reward: 1900.0
+      17:
+        exp-required: 2100
+        money-reward: 2250.0
+      18:
+        exp-required: 2400
+        money-reward: 2700.0
+      19:
+        exp-required: 2700
+        money-reward: 3150.0
+      20:
+        exp-required: 3200
+        money-reward: 4000.0
+      21:
+        exp-required: 3600
+        money-reward: 4800.0
+      22:
+        exp-required: 4000
+        money-reward: 5600.0
+      23:
+        exp-required: 4400
+        money-reward: 6400.0
+      24:
+        exp-required: 4800
+        money-reward: 7200.0
+      25:
+        exp-required: 5600
+        money-reward: 8000.0
+      26:
+        exp-required: 6400
+        money-reward: 9600.0
+      27:
+        exp-required: 7200
+        money-reward: 11200.0
+      28:
+        exp-required: 8000
+        money-reward: 12800.0
+      29:
+        exp-required: 8800
+        money-reward: 14400.0
+      30:
+        exp-required: 9600
+        money-reward: 16000.0
+      31:
+        exp-required: 10800
+        money-reward: 17600.0
+      32:
+        exp-required: 12000
+        money-reward: 19200.0
+      33:
+        exp-required: 13200
+        money-reward: 20800.0
+      34:
+        exp-required: 14400
+        money-reward: 22400.0
+      35:
+        exp-required: 16000
+        money-reward: 24000.0
+      36:
+        exp-required: 17600
+        money-reward: 26400.0
+      37:
+        exp-required: 19200
+        money-reward: 28800.0
+      38:
+        exp-required: 20800
+        money-reward: 31200.0
+      39:
+        exp-required: 22400
+        money-reward: 33600.0
+      40:
+        exp-required: 24000
+        money-reward: 36000.0
+      41:
+        exp-required: 26400
+        money-reward: 40000.0
+      42:
+        exp-required: 28800
+        money-reward: 44000.0
+      43:
+        exp-required: 31200
+        money-reward: 48000.0
+      44:
+        exp-required: 33600
+        money-reward: 52000.0
+      45:
+        exp-required: 36000
+        money-reward: 56000.0
+      46:
+        exp-required: 40000
+        money-reward: 64000.0
+      47:
+        exp-required: 44000
+        money-reward: 72000.0
+      48:
+        exp-required: 48000
+        money-reward: 80000.0
+      49:
+        exp-required: 56000
+        money-reward: 100000.0
+      50:
+        exp-required: 80000
+        money-reward: 160000.0
+    
+    actions:
+      break_dirt:
+        exp: 1
+      break_grass_block:
+        exp: 2
+      break_coarse_dirt:
+        exp: 1
+      break_podzol:
+        exp: 2
+      break_mycelium:
+        exp: 2
+      break_grass:
+        exp: 1
+      break_tall_grass:
+        exp: 1
+      break_fern:
+        exp: 1
+      break_sand:
+        exp: 2
+      break_red_sand:
+        exp: 2
+      break_gravel:
+        exp: 2
+      break_clay:
+        exp: 3
+      break_snow:
+        exp: 1
+      break_snow_block:
+        exp: 2
+      break_soul_sand:
+        exp: 3
+      break_soul_soil:
+        exp: 3
+      break_farmland:
+        exp: 2
+      break_path:
+        exp: 2
+      break_mud:
+        exp: 2
+      break_muddy_mangrove_roots:
+        exp: 3
+      break_rooted_dirt:
+        exp: 2
+
+  chef:
+    display-name: 'CHEF'
+    description: '&7Cook delicious meals and create culinary masterpieces'
+    icon: COOKED_BEEF
+    max-level: 50
+    
+    levels:
+      1:
+        exp-required: 90
+        money-reward: 45.0
+      2:
+        exp-required: 140
+        money-reward: 70.0
+      3:
+        exp-required: 190
+        money-reward: 95.0
+      4:
+        exp-required: 280
+        money-reward: 140.0
+      5:
+        exp-required: 380
+        money-reward: 190.0
+      6:
+        exp-required: 480
+        money-reward: 240.0
+      7:
+        exp-required: 580
+        money-reward: 290.0
+      8:
+        exp-required: 720
+        money-reward: 380.0
+      9:
+        exp-required: 860
+        money-reward: 480.0
+      10:
+        exp-required: 950
+        money-reward: 720.0
+      11:
+        exp-required: 1150
+        money-reward: 950.0
+      12:
+        exp-required: 1350
+        money-reward: 1200.0
+      13:
+        exp-required: 1550
+        money-reward: 1450.0
+      14:
+        exp-required: 1750
+        money-reward: 1700.0
+      15:
+        exp-required: 1950
+        money-reward: 1950.0
+      16:
+        exp-required: 2250
+        money-reward: 2400.0
+      17:
+        exp-required: 2550
+        money-reward: 2850.0
+      18:
+        exp-required: 2900
+        money-reward: 3400.0
+      19:
+        exp-required: 3300
+        money-reward: 3900.0
+      20:
+        exp-required: 3900
+        money-reward: 4800.0
+      21:
+        exp-required: 4400
+        money-reward: 5800.0
+      22:
+        exp-required: 4900
+        money-reward: 6800.0
+      23:
+        exp-required: 5400
+        money-reward: 7800.0
+      24:
+        exp-required: 5900
+        money-reward: 8800.0
+      25:
+        exp-required: 6800
+        money-reward: 9800.0
+      26:
+        exp-required: 7800
+        money-reward: 11500.0
+      27:
+        exp-required: 8800
+        money-reward: 13500.0
+      28:
+        exp-required: 9800
+        money-reward: 15500.0
+      29:
+        exp-required: 10800
+        money-reward: 17500.0
+      30:
+        exp-required: 11800
+        money-reward: 19500.0
+      31:
+        exp-required: 13200
+        money-reward: 21500.0
+      32:
+        exp-required: 14700
+        money-reward: 23500.0
+      33:
+        exp-required: 16200
+        money-reward: 25500.0
+      34:
+        exp-required: 17700
+        money-reward: 27500.0
+      35:
+        exp-required: 19500
+        money-reward: 29500.0
+      36:
+        exp-required: 21500
+        money-reward: 32500.0
+      37:
+        exp-required: 23500
+        money-reward: 35500.0
+      38:
+        exp-required: 25500
+        money-reward: 38500.0
+      39:
+        exp-required: 27500
+        money-reward: 41500.0
+      40:
+        exp-required: 29500
+        money-reward: 44500.0
+      41:
+        exp-required: 32500
+        money-reward: 49500.0
+      42:
+        exp-required: 35500
+        money-reward: 54500.0
+      43:
+        exp-required: 38500
+        money-reward: 59500.0
+      44:
+        exp-required: 41500
+        money-reward: 64500.0
+      45:
+        exp-required: 44500
+        money-reward: 69500.0
+      46:
+        exp-required: 49500
+        money-reward: 79500.0
+      47:
+        exp-required: 54500
+        money-reward: 89500.0
+      48:
+        exp-required: 59500
+        money-reward: 99500.0
+      49:
+        exp-required: 69500
+        money-reward: 124500.0
+      50:
+        exp-required: 99500
+        money-reward: 199500.0
+    
+    actions:
+      cook_beef:
+        exp: 5
+      cook_porkchop:
+        exp: 5
+      cook_chicken:
+        exp: 5
+      cook_mutton:
+        exp: 5
+      cook_rabbit:
+        exp: 5
+      cook_cod:
+        exp: 4
+      cook_salmon:
+        exp: 4
+      cook_potato:
+        exp: 3
+      cook_kelp:
+        exp: 2
+      craft_bread:
+        exp: 8
+      craft_cake:
+        exp: 15
+      craft_cookie:
+        exp: 6
+      craft_pumpkin_pie:
+        exp: 10
+      craft_mushroom_stew:
+        exp: 8
+      craft_rabbit_stew:
+        exp: 12
+      craft_beetroot_soup:
+        exp: 8
+      craft_suspicious_stew:
+        exp: 15
+      use_smoker:
+        exp: 3
+      use_campfire_cook:
+        exp: 4
+
+  murderer:
+    display-name: 'MURDERER'
+    description: '&7Hunt down other players and prove your dominance'
+    icon: NETHERITE_SWORD
+    max-level: 50
+    
+    levels:
+      1:
+        exp-required: 200
+        money-reward: 100.0
+      2:
+        exp-required: 300
+        money-reward: 150.0
+      3:
+        exp-required: 400
+        money-reward: 200.0
+      4:
+        exp-required: 600
+        money-reward: 300.0
+      5:
+        exp-required: 800
+        money-reward: 400.0
+      6:
+        exp-required: 1000
+        money-reward: 500.0
+      7:
+        exp-required: 1200
+        money-reward: 600.0
+      8:
+        exp-required: 1500
+        money-reward: 800.0
+      9:
+        exp-required: 1800
+        money-reward: 1000.0
+      10:
+        exp-required: 2000
+        money-reward: 1500.0
+      11:
+        exp-required: 2400
+        money-reward: 2000.0
+      12:
+        exp-required: 2800
+        money-reward: 2500.0
+      13:
+        exp-required: 3200
+        money-reward: 3000.0
+      14:
+        exp-required: 3600
+        money-reward: 3500.0
+      15:
+        exp-required: 4000
+        money-reward: 4000.0
+      16:
+        exp-required: 4600
+        money-reward: 5000.0
+      17:
+        exp-required: 5200
+        money-reward: 6000.0
+      18:
+        exp-required: 6000
+        money-reward: 7000.0
+      19:
+        exp-required: 6800
+        money-reward: 8000.0
+      20:
+        exp-required: 8000
+        money-reward: 10000.0
+      21:
+        exp-required: 9000
+        money-reward: 12000.0
+      22:
+        exp-required: 10000
+        money-reward: 14000.0
+      23:
+        exp-required: 11000
+        money-reward: 16000.0
+      24:
+        exp-required: 12000
+        money-reward: 18000.0
+      25:
+        exp-required: 14000
+        money-reward: 20000.0
+      26:
+        exp-required: 16000
+        money-reward: 24000.0
+      27:
+        exp-required: 18000
+        money-reward: 28000.0
+      28:
+        exp-required: 20000
+        money-reward: 32000.0
+      29:
+        exp-required: 22000
+        money-reward: 36000.0
+      30:
+        exp-required: 24000
+        money-reward: 40000.0
+      31:
+        exp-required: 27000
+        money-reward: 44000.0
+      32:
+        exp-required: 30000
+        money-reward: 48000.0
+      33:
+        exp-required: 33000
+        money-reward: 52000.0
+      34:
+        exp-required: 36000
+        money-reward: 56000.0
+      35:
+        exp-required: 40000
+        money-reward: 60000.0
+      36:
+        exp-required: 44000
+        money-reward: 66000.0
+      37:
+        exp-required: 48000
+        money-reward: 72000.0
+      38:
+        exp-required: 52000
+        money-reward: 78000.0
+      39:
+        exp-required: 56000
+        money-reward: 84000.0
+      40:
+        exp-required: 60000
+        money-reward: 90000.0
+      41:
+        exp-required: 66000
+        money-reward: 100000.0
+      42:
+        exp-required: 72000
+        money-reward: 110000.0
+      43:
+        exp-required: 78000
+        money-reward: 120000.0
+      44:
+        exp-required: 84000
+        money-reward: 130000.0
+      45:
+        exp-required: 90000
+        money-reward: 140000.0
+      46:
+        exp-required: 100000
+        money-reward: 160000.0
+      47:
+        exp-required: 110000
+        money-reward: 180000.0
+      48:
+        exp-required: 120000
+        money-reward: 200000.0
+      49:
+        exp-required: 140000
+        money-reward: 250000.0
+      50:
+        exp-required: 200000
+        money-reward: 400000.0
+    
+    actions:
+      kill_player:
+        exp: 100
